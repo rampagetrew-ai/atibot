@@ -1,0 +1,16 @@
+[Unit]
+Description=ATI.SU Telegram Bot
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/ati-bot
+EnvironmentFile=/root/ati-bot/.env
+ExecStart=/root/ati-bot/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
